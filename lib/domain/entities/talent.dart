@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Talent extends Equatable {
-  dynamic id;
+  final dynamic id;
   final String firstName;
   final String? lastName;
   final String profession;

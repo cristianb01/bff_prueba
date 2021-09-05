@@ -4,7 +4,7 @@ import 'package:bff_prueba/domain/repositories/talent_repository.dart';
 import 'package:dartz/dartz.dart';
 
 class GetNewTalents {
-  final TalentRepository _talentRepository;
+  final ITalentRepository _talentRepository;
 
   GetNewTalents(this._talentRepository);
 

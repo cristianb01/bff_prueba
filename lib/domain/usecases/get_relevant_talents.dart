@@ -4,7 +4,7 @@ import 'package:bff_prueba/domain/repositories/talent_repository.dart';
 import 'package:dartz/dartz.dart';
 
 class GetRelevantTalents {
-  final TalentRepository _talentRepository;
+  final ITalentRepository _talentRepository;
 
   GetRelevantTalents(this._talentRepository);
 

@@ -7,7 +7,7 @@ class SignIn {
 
   SignIn(this._authRepository);
 
-  Future<Either<Failure, dynamic>> call(Map userCredentials) async {
-    return _authRepository.signIn(userCredentials);
+  Future<Either<Failure, dynamic>> call(String email, String password) async {
+    return _authRepository.signIn(email, password);
   }
 }

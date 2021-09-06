@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 
 part 'auth_state.dart';
 
@@ -12,9 +13,8 @@ class AuthCubit extends Cubit<AuthState> {
 
   AuthCubit(this.signIn) : super(AuthInitial());
 
-  void signInWithEmailAndPassword(Map userCredentials) async {
-    emit(AuthLoading());
-    final useCaseResponse = await signIn(userCredentials);
+  void signInWithEmailAndPassword(String email, String password) async {
+    final useCaseResponse = await signIn(email, password);
     emit(_checkState(useCaseResponse));
   }
 

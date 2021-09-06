@@ -7,11 +7,9 @@ class AuthRepository implements IAuthRepository {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
-  Future<Either<Failure, dynamic>> signIn(Map userCredentials) async {
+  Future<Either<Failure, dynamic>> signIn(String email, String password) async {
     try {
-      await auth.signInWithEmailAndPassword(
-          email: userCredentials['email'],
-          password: userCredentials['password']);
+      await auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return Left(ServerFailure(message: 'User not found'));

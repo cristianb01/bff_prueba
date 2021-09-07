@@ -20,8 +20,12 @@ class TalentRepository implements ITalentRepository {
     Response response = await http.get(talenstEndpointUri);
 
     if (response.statusCode == 200) {
-      var responseBody = jsonDecode(response.body);
-      return Right(new List.empty()); // this has to be changed!
+      Iterable responseBody = jsonDecode(response.body);
+
+      List<TalentModel> list = List<TalentModel>.from(
+          responseBody.map((model) => talentModelFromJson(model)));
+
+      return Right(list);
     } else {
       return Left(ServerFailure(
           message: 'An error ocurred when trying to request the server'));
@@ -35,8 +39,12 @@ class TalentRepository implements ITalentRepository {
     Response response = await http.get(talentsEndpointUri);
 
     if (response.statusCode == 200) {
-      var responseBody = response.body;
-      return Right(new List.empty());
+      Iterable responseBody = jsonDecode(response.body);
+
+      List<Talent> list = List<TalentModel>.from(
+          responseBody.map((model) => talentModelFromJson(model)));
+
+      return Right(list);
     } else {
       return Left(ServerFailure(
           message: 'An error ocurred when trying to request the server'));

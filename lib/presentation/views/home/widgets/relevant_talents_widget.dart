@@ -21,8 +21,8 @@ class RelevantTalentsWidget extends StatelessWidget {
             Text('Talentos destacados'),
             ...relevantTalents
                 .map((talent) => TalentCardWidget(
-                    talentImage: 'insert image',
-                    talentName: '${talent.firstName} ${talent.lastName}',
+                    talentImage: talent.profileImageUrl,
+                    talentName: '${talent.firstName} ${talent.lastName ?? ''}',
                     talentProfession: talent.profession))
                 .toList()
           ],

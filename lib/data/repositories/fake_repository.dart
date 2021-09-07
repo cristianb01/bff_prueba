@@ -32,11 +32,24 @@ class FakeRepository implements ITalentRepository {
           firstName: 'Cristian',
           relevance: 8,
           profession: 'developer',
-          age: 23),
+          age: 23,
+          profileImageUrl:
+              'https://firebasestorage.googleapis.com/v0/b/bff-69140.appspot.com/o/talents%2Fimages%2Fm3dV01QH1gos8Rup1NJS.jpg?alt=media&token=fa60e9dd-13ce-49e3-a872-79daab953763'),
       new Talent(
-          firstName: 'Juan', relevance: 9, profession: 'developer', age: 43),
+          firstName: 'Juan',
+          relevance: 9,
+          profession: 'developer',
+          age: 43,
+          profileImageUrl:
+              'https://firebasestorage.googleapis.com/v0/b/bff-69140.appspot.com/o/talents%2Fimages%2FbAcpJr0FrInFNhfzpAIh.jpg?alt=media&token=5213a2a8-5e2c-4bf8-bc23-5afab72707f0'),
       new Talent(
-          firstName: 'Edwin', relevance: 6, profession: 'teacher', age: 33)
+          firstName: 'Luisa',
+          lastName: 'Fernanda W',
+          relevance: 6,
+          profession: 'teacher',
+          age: 33,
+          profileImageUrl:
+              'https://firebasestorage.googleapis.com/v0/b/bff-69140.appspot.com/o/talents%2Fimages%2FGq4mfdJ6gF2vhPjQbbvB.jpg?alt=media&token=57c87e82-89ac-469f-9d0a-fec3e4767e99')
     ];
     return Right(list);
   }

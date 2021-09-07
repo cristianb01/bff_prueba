@@ -1,4 +1,5 @@
 import 'package:bff_prueba/data/repositories/auth_repository.dart';
+import 'package:bff_prueba/data/repositories/fake_repository.dart';
 import 'package:bff_prueba/data/repositories/talent_repository.dart';
 import 'package:bff_prueba/domain/repositories/auth_repository.dart';
 import 'package:bff_prueba/domain/repositories/talent_repository.dart';
@@ -19,7 +20,8 @@ Future<void> init() async {
 
   sl.registerLazySingleton(() => GetRelevantTalents(sl()));
 
-  sl.registerLazySingleton<ITalentRepository>(() => TalentRepository());
+  //sl.registerLazySingleton<ITalentRepository>(() => TalentRepository());
+  sl.registerLazySingleton<ITalentRepository>(() => FakeRepository());
 
   sl.registerLazySingleton<IAuthRepository>(() => AuthRepository());
 

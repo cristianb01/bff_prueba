@@ -5,11 +5,13 @@ class Talent extends Equatable {
   final String firstName;
   final String? lastName;
   final String profession;
+  final String profileImageUrl;
   final int relevance;
   final int age;
 
   Talent(
       {this.id,
+      required this.profileImageUrl,
       required this.firstName,
       this.lastName,
       required this.relevance,

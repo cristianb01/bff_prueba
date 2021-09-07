@@ -36,7 +36,10 @@ class HomeScreen extends StatelessWidget {
           Image.asset('assets/images/bff-logo.png')
         ],
       ),
-      body: RelevantTalentsWidget(),
+      body: SingleChildScrollView(
+          child: Column(
+        children: [RelevantTalentsWidget()],
+      )),
     );
   }
 }

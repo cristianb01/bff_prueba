@@ -1,5 +1,5 @@
 const consfigDev = {
-  'FB_FUNCTIONS_URL': 'http://localhost:5000/bff-69140/us-central1/api',
+  'FB_FUNCTIONS_URL': 'https://10.0.2.2:8000/bff-69140/us-central1/api',
   'ENV': 'dev'
 };
 
